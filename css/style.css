@@ -1,0 +1,144 @@
+
+/************************ VARIAVEIS ATIVAS ************************/
+
+:root {
+    --cor-primaria: #03001C;
+    --cor-secundaria: #FFFFFF;
+    --cor-terciaria: #301E67;
+    --cor-quartenaria: #000000;
+    --cor-fundo-card: #ffffff;
+    --cor-hover: #5B8FB9;
+
+    --cor-foguete: #301e67;
+
+    --botao-github: #532f9d;
+    --botao-github-efeito: #8363c5;
+
+    --cor-gradiente-primario: linear-gradient(#301E67, #03001C);
+    --cor-gradiente-secundario: linear-gradient(#301E67, #000000 60%);
+
+    --fonte-primaria: 'Krona one', sans-serif;
+    --fonte-secundária: 'Montserrat', sans-serif;
+}
+
+/************************ VARIAVEIS ATIVAS ************************/
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.logo__site {
+    width: 1em;
+}
+
+.menu__barra {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
+
+.status__moedas {
+    margin-top: 5em;
+}
+
+.tabela__criptos {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.cotacao__cripts {
+    margin: 20px 0;
+}
+
+.tabela__coluna {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+canvas {
+    border: 1px solid #ccc;
+}
+
+main{
+    padding: 4em 0 0;
+}
+
+.cards__referencia {
+    padding: 6em 2em;
+}
+
+.cards__titulo_secao, .grafico__titulo_secao {
+    padding: 1.5em 0;
+}
+
+.card {
+    margin: 0.5em 0;
+}
+
+.grafico__bitcoin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6em 0;
+}
+
+#chart_btc {
+    width: 80%;
+}
+
+
+/* Início Rodapé */
+
+.rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000000;
+    padding: 75px 0 75px 0;
+    text-align: center;
+    font-weight: 400;
+}
+
+
+.rodape__botao__dev {
+    width: 80%;
+    border-radius: 8px;
+    padding: 0.5em;
+    background-color: #532f9d;
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 1em;
+    transition: 600ms;
+    margin: 20px 0;
+}
+
+.rodape__botao__dev:hover {
+    background-color: #8363c5;
+    transition: 600ms;
+}
+
+/* Final Rodapé */
+
+@media screen and (min-width: 1024px) {
+    .rodape__botao__dev {
+        width: 25%;
+    }
+
+}
+
+@media screen and (min-width: 1728px) {
+    .rodape__botao__dev {
+        width: 25%;
+    }
+
+}

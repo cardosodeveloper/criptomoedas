@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mapa de Calor Bitcoin</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+  <div id="heatmap_chart"></div>
+
+  <script>
+    // Função para obter os dados de cotação do Bitcoin nos últimos 12 meses
+    async function fetchBitcoinData() {
+      const endDate = new Date();  // Data atual
+      const startDate = new Date();
+      startDate.setFullYear(startDate.getFullYear() - 1);  // Subtrai 1 ano
+
+      const response = await axios.get(`https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range`, {
+        params: {
+          vs_currency: 'usd',
+          from: Math.floor(startDate.getTime() / 1000),
+          to: Math.floor(endDate.getTime() / 1000)
+        }
+      });
+
+      return response.data.prices;
+    }
+
+    // Função para desenhar o mapa de calor
+    function drawHeatmap(data) {
+      google.charts.load('current', {
+        packages: ['calendar']
+      });
+      google.charts.setOnLoadCallback(function () {
+        const dataTable = new google.visualization.DataTable();
+        dataTable.addColumn({ type: 'date', id: 'Date' });
+        dataTable.addColumn({ type: 'number', id: 'Price' });
+
+        // Converter os dados para o formato do Google Charts
+        const chartData = data.map(([timestamp, price]) => {
+          return [new Date(timestamp), price];
+        });
+
+        dataTable.addRows(chartData);
+
+        const chart = new google.visualization.Calendar(document.getElementById('heatmap_chart'));
+
+        const options = {
+          title: 'Cotação do Bitcoin nos últimos 12 meses',
+          height: 350,
+        };
+
+        chart.draw(dataTable, options);
+      });
+    }
+
+    async function init() {
+      const bitcoinData = await fetchBitcoinData();
+      drawHeatmap(bitcoinData);
+    }
+
+    init();
+  </script>
+</body>
+</html>

@@ -4,7 +4,6 @@ async function fetchEthereumData() {
   const twelveMonthsAgo = new Date();
   twelveMonthsAgo.setMonth(today.getMonth() - 12);
 
-  // Alteração para Ethereum (ETH) com 'vs_currency=brl' (Reais)
   const apiUrl = `https://api.coingecko.com/api/v3/coins/ethereum/market_chart/range?vs_currency=brl&from=${Math.floor(twelveMonthsAgo.getTime() / 1000)}&to=${Math.floor(today.getTime() / 1000)}`;
 
   try {

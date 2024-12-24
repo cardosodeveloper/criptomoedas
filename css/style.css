@@ -47,7 +47,7 @@ body {
     padding: 5rem 0;
 }
 
-.mom__biticoin   {
+.mom__bitcoin   {
     padding: 2rem 0;
 }
 
@@ -106,10 +106,10 @@ body {
 
 
 
-/* Ultimos 12 meses biticoin */
+/* Ultimos 12 meses bitcoin */
 
 
-.mom__bitcoin {
+/* .mom__bitcoin {
   width: 80%;
   max-width: 900px;
   text-align: center;
@@ -124,9 +124,9 @@ mom__bitcoin canvas {
   width: 100%;
   height: 400px;
 }
+*/
 
-
-/* Ultimos 12 meses biticoin */
+/* Ultimos 12 meses bitcoin */
 
 
 
